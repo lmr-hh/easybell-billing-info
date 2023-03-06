@@ -1,0 +1,56 @@
+name: Publish Function to Azure
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Set up Go
+        uses: actions/setup-go@v3
+      - name: Prepare Deployment
+        run: rsync -a --prune-empty-dirs --exclude 'pkg/' --include '*/' --include '*.json' --exclude '*' . build
+      - name: Build Binary
+        run: go build cmd/easybell-billing-info -o build/
+        env:
+          GOOS: linux
+          GOARCH: amd64
+      - name: Create Deployment Bundle
+        working-directory: ./build
+        run: zip -FSr9 ../package.zip * .*
+      - uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
+        with:
+          inlineScript:
+            az storage blob upload
+            --auth-mode login
+            --account-name ${{ vars.STORAGE_ACCOUNT_NAME }}
+            --container-name ${{ vars.STORAGE_ACCOUNT_CONTAINER }}
+            --name ${{ vars.FUNCTION_NAME}}.zip
+            --file package.zip
+            --overwrite
+      - name: Sync Triggers
+        uses: azure/CLI@v1
+        with:
+          inlineScript:
+            az resource invoke-action
+            --resource-group ${{ vars.RESOURCE_GROUP }}
+            --namespace Microsoft.Web
+            --resource-type sites
+            --name ${{ vars.FUNCTION_NAME}}
+            --action syncfunctiontriggers
