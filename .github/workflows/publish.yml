@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v3
         with:
           go-version-file: go.mod
           cache: true
-      - name: Set up Go
-        uses: actions/setup-go@v3
       - name: Prepare Deployment
         run: rsync -a --prune-empty-dirs --exclude 'pkg/' --include '*/' --include '*.json' --exclude '*' . build
       - name: Build Binary

@@ -53,8 +53,8 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	http.Handle("/api/CurrentUsage", currentUsageHandler)
-	http.Handle("/api/MonthlyUsage", monthlyUsageHandler)
+	http.Handle("/CurrentUsage", currentUsageHandler)
+	http.Handle("/MonthlyUsage", monthlyUsageHandler)
 	log.Printf("Listening on http://127.0.0.1%s/", listenAddr)
 	log.Fatalln(http.ListenAndServe(listenAddr, nil))
 
