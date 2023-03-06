@@ -21,7 +21,7 @@ jobs:
       - name: Prepare Deployment
         run: rsync -a --prune-empty-dirs --exclude 'pkg/' --include '*/' --include '*.json' --exclude '*' . build
       - name: Build Binary
-        run: go build cmd/easybell-billing-info -o build/
+        run: go build -o build/ ./cmd/easybell-billing-info
         env:
           GOOS: linux
           GOARCH: amd64
