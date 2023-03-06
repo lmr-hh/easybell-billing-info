@@ -1,0 +1,142 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "easyBell Monatsübersicht",
+          "weight": "Bolder",
+          "size": "ExtraLarge"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Januar 2023",
+          "spacing": "None",
+          "isSubtle": true,
+          "weight": "Bolder"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": 15,
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Festnetz",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "1337/2000",
+                  "spacing": "None",
+                  "weight": "Bolder",
+                  "size": "Large"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": 10,
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Mobil",
+                  "isSubtle": true,
+                  "horizontalAlignment": "Center"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "69/200",
+                  "weight": "Bolder",
+                  "horizontalAlignment": "Center",
+                  "spacing": "None",
+                  "size": "Large"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": 10,
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "International",
+                  "isSubtle": true,
+                  "horizontalAlignment": "Right",
+                  "weight": "Default"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "0/0",
+                  "horizontalAlignment": "Right",
+                  "weight": "Bolder",
+                  "spacing": "None",
+                  "size": "Large"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Zusätzliche Kosten",
+                  "weight": "Bolder"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "2,52 €",
+                  "weight": "Bolder",
+                  "color": "Good"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Es sind in dieser Zeitspanne internationale Anrufe getätigt worden. In der Kostenschätzung sind diese nicht berücksichtigt.",
+      "wrap": true,
+      "spacing": "None",
+      "color": "Warning",
+      "isVisible": false
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Diese Angaben sind Schätzwerte auf Basis der Anrufliste. Diese Angaben sollten mit dem Einzelverbindungsnachweis, bzw. der Rechnung des Monats abgeglichen werden.",
+          "size": "Small"
+        }
+      ]
+    }
+  ]
+}

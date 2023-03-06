@@ -1,0 +1,209 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.4",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "easyBell Telefonieverbrauch",
+          "weight": "Bolder",
+          "size": "ExtraLarge"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Februar 2023 (vorläufig)",
+          "spacing": "None",
+          "isSubtle": true,
+          "weight": "Bolder"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "items": [
+        {
+          "type": "ColumnSet",
+          "spacing": "Medium",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Festnetz",
+                  "isSubtle": true,
+                  "horizontalAlignment": "Left"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "13:37",
+                  "spacing": "None",
+                  "size": "ExtraLarge",
+                  "horizontalAlignment": "Left"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Mobil",
+                  "isSubtle": true,
+                  "horizontalAlignment": "Center",
+                  "weight": "Default"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "69:00",
+                  "horizontalAlignment": "Center",
+                  "spacing": "None",
+                  "size": "ExtraLarge"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Andere",
+                  "isSubtle": true,
+                  "horizontalAlignment": "Right"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "00:00",
+                  "horizontalAlignment": "Right",
+                  "spacing": "None",
+                  "size": "ExtraLarge"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "separator": true,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Prognose zum Monatsende",
+          "size": "Large",
+          "weight": "Bolder"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Diese Daten sind ein Schätzwert für den Telefonverbrauch am Monatsende. Sie beruhen auf den ",
+          "spacing": "None",
+          "size": "Small",
+          "isSubtle": true
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Festnetz",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "250 min.",
+                  "spacing": "None",
+                  "horizontalAlignment": "Left",
+                  "size": "ExtraLarge"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Mobil",
+                  "horizontalAlignment": "Center",
+                  "isSubtle": true
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "120 min.",
+                  "spacing": "None",
+                  "horizontalAlignment": "Center",
+                  "size": "ExtraLarge"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Andere",
+                  "isSubtle": true,
+                  "horizontalAlignment": "Right"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "00 min.",
+                  "horizontalAlignment": "Right",
+                  "spacing": "None",
+                  "size": "ExtraLarge"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Zusätzliche Kosten",
+                  "weight": "Bolder"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "0,00 €"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "Es sind in dieser Zeitspanne internationale Anrufe getätigt worden. In der Kostenschätzung sind diese nicht berücksichtigt.",
+          "wrap": true,
+          "spacing": "None",
+          "color": "Warning",
+          "isVisible": false
+        }
+      ]
+    }
+  ]
+}
