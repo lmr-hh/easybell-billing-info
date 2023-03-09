@@ -2,7 +2,7 @@
   "bindings": [
     {
       "type": "timerTrigger",
-      "schedule": "0 9 */7 * *",
+      "schedule": "0 9 7-31/7 * *",
       "name": "timer",
       "direction": "in"
     }
