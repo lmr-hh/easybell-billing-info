@@ -69,7 +69,7 @@ func (h *Handler) makeCard(now time.Time, currentNational, currentMobile, curren
 						Weight: "bolder",
 					},
 					&cards.TextBlock{
-						Text:     "Diese Daten sind ein Schätzwert für den Telefonverbrauch am Monatsende. Sie beruhen auf den Daten der letzten vier Wochen.",
+						Text:     "Diese Daten sind ein Schätzwert für den Telefonverbrauch am Monatsende. Sie beruhen auf den Daten der letzten fünf Wochen.",
 						Wrap:     cards.TruePtr(),
 						Spacing:  "none",
 						Size:     "small",

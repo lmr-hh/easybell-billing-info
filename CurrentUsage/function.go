@@ -44,7 +44,7 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) sendUsageReport() error {
 	now := time.Now().In(h.location)
-	estimationDays := 28
+	estimationDays := 35
 	year, month, _ := now.Date()
 	startOfMonth := time.Date(year, month, 1, 0, 0, 0, 0, h.location)
 	estimationStart := now.AddDate(0, 0, -estimationDays)
