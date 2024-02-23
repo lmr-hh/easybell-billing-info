@@ -37,7 +37,7 @@ var lastMonthCommand = &cobra.Command{
 		if !sendWebhook {
 			return nil
 		}
-		return sendPreviousUsageReport(now, usage)
+		return sendPreviousUsageReport(start, usage)
 	},
 }
 
@@ -122,20 +122,4 @@ func sendPreviousUsageReport(when time.Time, usage easybell.Usage) error {
 	} else {
 		return teamsClient.Send(teamsWebhookURL, msg)
 	}
-}
-
-// months contains the German month names.
-var months = map[time.Month]string{
-	1:  "Januar",
-	2:  "Februar",
-	3:  "März",
-	4:  "April",
-	5:  "Mai",
-	6:  "Juni",
-	7:  "Juli",
-	8:  "August",
-	9:  "September",
-	10: "Oktober",
-	11: "November",
-	12: "Dezember",
 }

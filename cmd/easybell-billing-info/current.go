@@ -91,7 +91,7 @@ func sendCurrentUsageReport(now time.Time, currentUsage easybell.Usage, estimate
 				Size:   adaptivecard.SizeExtraLarge,
 			}, {
 				Type:     adaptivecard.TypeElementTextBlock,
-				Text:     now.Format("01/2006 (vorläufig)"),
+				Text:     fmt.Sprintf("%s %d", months[now.Month()], now.Year()),
 				Wrap:     true,
 				Spacing:  adaptivecard.SpacingNone,
 				IsSubtle: true,
