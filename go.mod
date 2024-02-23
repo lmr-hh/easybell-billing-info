@@ -1,5 +1,13 @@
-module github.com/lmr-hh/functions
+module github.com/lmr-hh/easybell-billing-info
 
-go 1.19
+go 1.21
 
-require github.com/DanielTitkov/go-adaptive-cards v0.2.2
+require (
+	github.com/atc0005/go-teams-notify/v2 v2.10.0
+	github.com/spf13/cobra v1.8.0
+)
+
+require (
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
+)
