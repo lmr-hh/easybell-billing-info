@@ -1,6 +1,7 @@
 package easybell
 
 import (
+	"fmt"
 	"net/http"
 	"net/http/cookiejar"
 	"net/url"
@@ -25,7 +26,7 @@ func NewClient() *Client {
 }
 
 // Login authenticates the client against easyBell.
-func (c *Client) Login(username string, password string) error {
+func (c *Client) Login(username string, password string) (err error) {
 	resp, err := c.httpClient.PostForm("https://login.easybell.de/login", url.Values{
 		"id":       []string{username},
 		"password": []string{password},
@@ -33,8 +34,15 @@ func (c *Client) Login(username string, password string) error {
 	if err != nil {
 		return err
 	}
-	// TODO: Handle invalid credentials.
-	return resp.Body.Close()
+	defer func() {
+		if cErr := resp.Body.Close(); err == nil {
+			err = cErr
+		}
+	}()
+	if resp.StatusCode >= http.StatusBadRequest {
+		return fmt.Errorf("invalid credentials or API change")
+	}
+	return nil
 }
 
 // Logout un-authenticates the client.
