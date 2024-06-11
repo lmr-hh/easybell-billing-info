@@ -101,7 +101,7 @@ func (r *CallLogReader) nextPage() error {
 	if r.Kind != "" {
 		query.Set("filter_ART", string(r.Kind))
 	}
-	resp, err := r.Client.httpClient.Get("https://login.easybell.de/call-log/ajax?" + query.Encode())
+	resp, err := r.Client.httpClient.Get("https://login.easybell.de/call-history/data?" + query.Encode())
 	if err != nil {
 		return err
 	}
