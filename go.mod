@@ -4,7 +4,7 @@ go 1.22.4
 
 require (
 	github.com/atc0005/go-teams-notify/v2 v2.10.0
-	github.com/spf13/cobra v1.8.0
+	github.com/spf13/cobra v1.8.1
 )
 
 require (
