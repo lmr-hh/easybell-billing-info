@@ -79,8 +79,8 @@ func (r *CallLogReader) nextPage() error {
 	r.i = 0
 
 	query := url.Values{}
-	query.Set("s", strconv.FormatInt(r.Start.Unix(), 10))
-	query.Set("e", strconv.FormatInt(r.End.Unix(), 10))
+	query.Set("start", strconv.FormatInt(r.Start.Unix(), 10))
+	query.Set("end", strconv.FormatInt(r.End.Unix(), 10))
 	query.Set("page", strconv.Itoa(r.curPage))
 
 	if r.PageSize > 0 {
