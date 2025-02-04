@@ -1,6 +1,6 @@
 module github.com/lmr-hh/easybell-billing-info
 
-go 1.23.5
+go 1.23.6
 
 require (
 	github.com/atc0005/go-teams-notify/v2 v2.13.0
